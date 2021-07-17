@@ -1,6 +1,11 @@
+import { Logo } from "./styles";
+
 function Header(){
     return(
-        <h1>este es el header</h1>
+        <Logo>
+            <img src="https://image.flaticon.com/icons/png/512/2471/2471792.png" height="90" width="90"/>
+            <h1>TecnoBlog</h1>
+        </Logo>
     )
 }
 
