@@ -1,8 +1,11 @@
+import React from 'react';
+import * as Yup from 'yup'
 import { Formik } from 'formik';
-import * as Yup from 'yup';
-import { Text3 } from '../../componentes/Text/styles';
+import { Text3 } from '../../components/Text/styles';
 import api from '../../services/api';
 import * as S from './styles.js';
+import Button from '../../components/Button';
+import Input from '../../components/Input';
 
 
 const CMA = props =>{    
@@ -14,24 +17,24 @@ const CMA = props =>{
           };
         
     const scheme = Yup.object().shape({
-            name: Yup.string()
-            .min(2, 'Muito curto')
-            .max(50, 'Muito longo')
-            .required('Nome obrigatório'),
-            email: Yup.string().email('E-mail inválido').required('E-mail obrigatório'),
-            password: Yup.string()
-            .required('Senha obrigatória')
-            .min(6, 'Senha muito curta, precisa ter pelo menos 6 caracteres'),
-            confirmPassword: Yup.string().oneOf(
-            [Yup.ref('password'), null],
-            'Senhas devem ser iguais',
-            ),
-        });
+             titulo: Yup.string()
+             .min(2, 'Muito curto')
+             .max(50, 'Muito longo')
+             .required('Nome obrigatório'),
+             email: Yup.string().email('E-mail inválido').required('E-mail obrigatório'),
+             password: Yup.string()
+             .required('Senha obrigatória')
+             .min(6, 'Senha muito curta, precisa ter pelo menos 6 caracteres'),
+             confirmPassword: Yup.string().oneOf(
+             [Yup.ref('password'), null],
+             'Senhas devem ser iguais',
+             ),
+         });
     const onSubmit = async (values, resetForm) => {
-            const response = await api.post('/', { values });
+            const response = await api.post('/users', { values });
             if (response.status === 201) {
                 resetForm({ values: '' });
-                props.history.push('/');
+                props.history.push('/home');
             }
         };
             
@@ -44,16 +47,16 @@ const CMA = props =>{
           onSubmit={(values, { resetForm }) => onSubmit(values, resetForm)}
         >
           <form>
-            <input id="name" name="name" type="text" placeholder="Nome" />
-            <input name="email" type="email" placeholder="Email" />
-            <input name="password" type="password" placeholder="Senha" />
-            <input
-              name="confirmPassword"
-              type="password"
-              placeholder="Confirmação de senha"
+            <Input id="titulo" name="name" type="text" placeholder="Titulo da materia" />
+            <Input name="subtitulo" type="text" placeholder="Subtitulo da materia" />
+            <Input name="img" type="text" placeholder="Url primera imagen" />
+            <Input
+              name="segundaImg"
+              type="text"
+              placeholder="Url de la segunda imagen"
             />
-            <button type="submit">Cadastrar</button>
-            <Text3 color="blue">Já tenho conta. Entrar.</Text3>
+            <Button type="submit">Publicar</Button>
+            <Text3 color="blue">ya veremos que podra ser.</Text3>
           </form>
         </Formik>
         </S.CMAContainer>
