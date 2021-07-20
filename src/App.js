@@ -9,9 +9,10 @@ import GlobalStyle from './styles/global';
 
 function App() {
   return (
+    
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Header/>
+      <Header/>
         <Routes/>
         <GlobalStyle/>
       </BrowserRouter>
