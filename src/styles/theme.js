@@ -1,4 +1,4 @@
 export const theme ={
-  default: '#C8C8C8',
+  default: '#4B4F56',
   error: '#FF3333',
 }

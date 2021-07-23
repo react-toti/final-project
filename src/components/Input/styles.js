@@ -17,7 +17,8 @@ export const Container = styled.div`
     padding: 19px 20px;
     width: 100%;
     max-width: 470px;
-    margin-bottom: 16px;
+    margin-bottom: 5px;
+    margin-top: 15px;
 
    color: ${({theme, variant})=> {
         switch(variant){

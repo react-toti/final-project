@@ -1,16 +1,44 @@
-import React from 'react';
-import { SingnIn, SingnUp } from '../../components';
+import React, { useState } from 'react';
+import { SingnIn, SingnUp, Button } from '../../components';
 
-import { Container} from './styles';
 
-const Login = () => {
+import { Container, ContainerSingIn, ContainerSingUp, ContainerButton, Img} from './styles';
+
+
+const Login = (...props) => {
+
+  const [imgPosition, setImg] = useState('0%');
+
+  const entrar = () => {
+    setImg("0%");
+    //console.log(imgPosition);
+  };
+  const criarConta = () => {
+    setImg("50%");
+    //console.log(imgPosition);
+  };
+
+  
   return (
     <>
-      <h1>Login</h1>
+        <ContainerButton>
+            <Button buttonStyle='error' onClick={(event) => entrar()}>
+                {' '}Entrar{' '}
+            </Button>
+            <Button onClick={(event) => criarConta()}>
+                {' '}Criar conta{' '}
+            </Button>
+        </ContainerButton>
       <Container>
-          <img/>
-        <SingnIn/>
-        <SingnUp/>
+        <Img {...props} right={imgPosition}  src="http://placeimg.com/640/480/food"/>
+
+        <ContainerSingIn>
+            <SingnIn/>
+        </ContainerSingIn>
+        
+        <ContainerSingUp>
+          <SingnUp/>
+        </ContainerSingUp>
       </Container>
     </>
   );

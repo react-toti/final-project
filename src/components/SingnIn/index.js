@@ -1,44 +1,63 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FormContainer} from './styles';
-
+import React from 'react';
+import { FormContainer, Container, ContainerButton} from './styles';
+import { Formik} from 'formik';
+import * as Yup from 'yup';
+import api from '../../services/api';
 import { Input, Button } from '../../components';
 
-const SingnIn = () => {
+const SingnIn = (props) => {
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleForm = (event) => {
-    event.preventDefault()
-    console.log(email, password);
+  const initialValues = {
+    email: '',
+    password: '',
   };
+
+  const scheme = Yup.object().shape({
+    email: Yup.string().email('E-mail inválido').required('E-mail obrigatório'),
+    password: Yup.string()
+      .required('Senha obrigatória')
+      .min(6, 'Senha muito curta, precisa ter pelo menos 6 caracteres'),
+  });
+
+  const onSubmit = async (values, { resetForm }) => {
+    console.log('SingnIn')
+    /* const response = await api.post('/Users', {
+      email: values.email,
+      password: values.password,
+    });
+    console.log(response);
+
+    if (response.status === 201) {
+      resetForm();
+      props.history.push('/home');
+    } */
+  };
+
   return (
-    <>
+    <Container>
         <h1>SingnIn</h1>
-        <FormContainer onSubmit={(event) => handleForm(event)}>
-            <Input
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            placeholder="Email"
-            />
-            <Input
-            value={password}
-            type='password'
-            onChange={e => setPassword(e.target.value)}
-            placeholder="Senha"
-            />
-            <Button type='submit' >Entrar</Button>
-            
-            
-            <Link to="/signup">
-            <Button buttonSize="small" buttonStyle="secondary">
-                {' '}
-                Criar conta{' '}
-            </Button>
-            </Link>
-        </FormContainer>
-    </>
+        <Formik
+          initialValues={initialValues}
+          validationSchema={scheme}
+          onSubmit={(values, { resetForm }) => onSubmit(values, resetForm)}
+        >
+          <FormContainer>
+              <Input
+              name="email"
+              placeholder="Email"
+              />
+              <Input
+              name="password"
+              type="password"
+              placeholder="Senha"
+              />
+              <ContainerButton>
+                <Button type='submit' >Entrar</Button>
+              </ContainerButton>
+              
+          </FormContainer>
+        </Formik>
+    </Container>
   );
 };
 
