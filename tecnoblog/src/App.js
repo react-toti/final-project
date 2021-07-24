@@ -4,9 +4,9 @@ import GlobalStyle from './styles/global';
 
 import Routes from './routes';
 
-import Header from './componentes/Header';
-import Submenu from './componentes/Submenu';
-import Footer from './componentes/Footer';
+import Header from './components/Header';
+import Submenu from './components/Submenu';
+import Footer from './components/Footer';
 
 
 function App() {

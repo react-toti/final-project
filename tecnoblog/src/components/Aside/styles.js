@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
 export const AsideContainer = styled.div`
+  position: sticky;
+  top: 0;
+  right: -225px;
+  margin: 200px;
+  height: 800px;
+  width: 250px;
+  grid-area: aside;
   display: flex;
   flex-direction: column;
   align-items: center;
