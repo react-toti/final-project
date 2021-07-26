@@ -8,7 +8,7 @@ export const Container = styled.button`
   padding: ${({ size }) => {
     return (size === 'medio' ? '10.08px' : '20px 18px')}};
   border-radius: 8px;
-  background-color: ${({theme})=> theme.blue};
+  background-color: ${({theme})=> theme.default};
   text-align:center;
 
   background-color: ${({theme, variant})=>{
