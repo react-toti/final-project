@@ -23,8 +23,15 @@ export const ContainerSingUp = styled.div`
     text-align: -webkit-center;
 
 `;
+export const Setimg = styled.button`
+    border: 0px;
+    font-size: 24px;
+    background-color: transparent;
+    color: ${({theme, colorbtn}) => colorbtn === 'default'? theme.default : theme.error };
+
+`;
 export const ContainerButton = styled.div`
-    display: block;
+    display: flex;
     width: 100%;
     margin: 30px auto;
     text-align: -webkit-center;

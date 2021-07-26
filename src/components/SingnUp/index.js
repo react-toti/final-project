@@ -14,14 +14,15 @@ const SingnUp = props => {
     name: '',
     email: '',
     password: '',
-    confirmPassword: '',
+    confirmarPassword: '',
   };
 
   const scheme = Yup.object().shape({
     name: Yup.string()
       .min(2, 'Muito curto')
       .max(50, 'Muito longo')
-      .required('Nome obrigatório'),
+      .required('Nome obrigatório')
+      .matches(/^[aA-zZ\s]+$/, "no mames wey, solo letras"),
     email: Yup.string().email('E-mail inválido').required('E-mail obrigatório'),
     password: Yup.string()
       .required('Senha obrigatória')
@@ -33,20 +34,19 @@ const SingnUp = props => {
   });
 
 
-  const getProduct = async () => {
+  const onSubmit = async (values, resetForm, props) => {
     const response = await api.post("/Users",{
-      name: "Gabriela",
-      email: "Gabriela@gmail.com",
-      password: "123456",
+      name: values.name,
+      email: values.email,
+      password: values.password,
     });
     console.log(response);
-  };
-
-  const onSubmit = async (values, resetForm) => {
-    getProduct();
-    console.log('SingnUp')
-    resetForm();
-    props.history.push('/home');
+    if (response.status === 201) {
+      //console.log()
+      resetForm({ values: '' });
+      window.location.href = window.location.origin+'/home';
+      //props.history.push('/home');
+    }
     
   };
 
@@ -58,7 +58,7 @@ const SingnUp = props => {
         <Formik
           initialValues={initialValues}
           validationSchema={scheme}
-          onSubmit={(values, { resetForm }) => onSubmit(values, resetForm)}
+          onSubmit={(values, { resetForm }, props) => onSubmit(values, resetForm, props)}
         >
           <FormContainer>
               <Input

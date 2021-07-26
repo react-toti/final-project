@@ -19,18 +19,18 @@ const SingnIn = (props) => {
       .min(6, 'Senha muito curta, precisa ter pelo menos 6 caracteres'),
   });
 
-  const onSubmit = async (values, { resetForm }) => {
-    console.log('SingnIn')
-    /* const response = await api.post('/Users', {
+  const onSubmit = async (values, resetForm) => {
+    const response = await api.post("/Access",{
       email: values.email,
       password: values.password,
     });
     console.log(response);
-
     if (response.status === 201) {
-      resetForm();
-      props.history.push('/home');
-    } */
+      resetForm({ values: '' });
+      window.location.href = window.location.origin+'/home';
+      //props.history.push('/home');
+    }
+    
   };
 
   return (
