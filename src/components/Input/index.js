@@ -1,19 +1,21 @@
 import React from 'react';
+import { useField } from 'formik';
 
 import { Container, ErrorMessage } from './styles';
 
-const variants = ['default', 'filled', 'error', 'selected' ]
+const Input = ({ placeholder, ...props }) => {
+  const [field, meta] = useField(props);
 
-const Input = ({placeholder, inputStyle,  ...props}) =>{
-  const checkInputStyle = variants.includes(inputStyle) 
-  ? inputStyle 
-  : variants[0];
-  
-  return(
-  <Container variant={checkInputStyle}>
-    <input placeholder={placeholder}  {...props}/>
-    <ErrorMessage/>
-  </Container>
-)};
+  return (
+    <Container>
+      <input placeholder={placeholder} {...field} {...props} />
+      {meta.touched && meta.error ? (
+        <ErrorMessage>{meta.error}</ErrorMessage>
+      ) : (
+        <></>
+      )}
+    </Container>
+  );
+};
 
 export default Input;
