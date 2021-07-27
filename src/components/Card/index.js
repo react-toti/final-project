@@ -35,27 +35,27 @@ function MediaCard(props) {
           {prod.map(cloth => (
             <Grid item key={cloth.Departament}>
               <Card className={style.card}>
-                <CardActionArea >
+                <CardActionArea>
                   <CardMedia
                     component="img"
                     alt="Contemplative Reptile"
                     image={cloth.Imagen}
                     title="Contemplative Reptile"
                   />
-                  <CardContent>
+                  <CardContent  className={style.cont}>
                     <Typography gutterBottom variant="h5" component="h2">
                       {cloth.title}
                     </Typography>
-                    <Typography component="p" className={style.par}>{cloth.name}</Typography>
+                    <Typography component="p" className={style.par1}>{cloth.name}</Typography>
                     <div><br /></div>
-                    <Typography component="p" className={style.par}>{cloth.Price}</Typography>
+                    <Typography component="p" className={style.par2}>R$ {cloth.Price}</Typography>
                   </CardContent>
                 </CardActionArea>
-                <CardActions>
-                  <Button size="small" color="primary">
+                <CardActions className={style.btnCont}>
+                  <Button size="small" color="primary" className={style.btn}>
                     Comprar
                   </Button>
-                  <Button size="small" color="primary">
+                  <Button size="small" color="primary" className={style.btn}>
                     Carrito
                   </Button>
                 </CardActions>
