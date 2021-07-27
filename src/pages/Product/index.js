@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
+import ProductItem from "../../components/ProductItem";
+import api from "../../services/api";
 
+const Product = ({ id }) => {
+  const getProduct = async () => {
+    const response = await api.get("/Product/1", {});
+    return response.data;
+  };
 
-const Product = () => {
   return (
     <>
-        <h1>Product</h1>
-      
+      <ProductItem data={getProduct} />
     </>
   );
 };
