@@ -6,7 +6,6 @@ flex-wrap: wrap;
 justify-content: center;
 margin-top: 100px;
 `;
-
 export const ImgProduct = styled.img`
 width: 600px;
 height: 500px;
@@ -18,7 +17,6 @@ flex-direction: column;
 margin-right: 30px;
 margin-top: 30px;
 `
-
 export const ImgProduct2 = styled.img`
 width: 100px;
 height: 100px;
@@ -26,21 +24,10 @@ margin: 5px;
 background-color: #ffffff;
 `
 export const Description = styled.div`
-/* display: flex; */
-/* flex-direction: column; */
-/* justify-content: center; */
-/* align-items: center; */
 width: 600px;
 height: 455px;
 background-color: #f6f7fb;
-/* background-color: #c1a68e; */
 color: #000000;
-/* border: 1px solid; */
-`
-
-export const Paragraphy = styled.p`
-color: #000;
-margin: 30px 100px ;
 `
 export const Quantity = styled.div`
 display: flex;
@@ -55,21 +42,24 @@ margin-right: 10%;
 font-size: 1.2em;
 `
 export const Button = styled.button`
-padding: 8px 13px;
+padding: 8px;
 border-radius: 50%;
 border: none;
-background-color: #ff616f;
-margin-top: -5px;
+background-color: ${({theme}) => theme.primaryLight};
+margin-top: -6px;
 `
 export const Title = styled.h2`
 font-size: 3em;
 text-align: center;
 font-weight: bold;
+color:${({theme})=> theme.secondaryDark};
 `
 export const DescriptionText = styled.div`
 width: 60%;
 margin: 12% auto;
 text-align: center;
+color:${({theme})=> theme.default};
+font-size: 20px;
 `
 export const AddCart = styled.button`
 display: flex;
@@ -78,7 +68,15 @@ align-items: center;
 margin: 5% auto;
 margin-left: 40%;
 padding: 20px;
-border: 5px solid #ff1744;
+border: 5px solid ${({theme}) => theme.secondaryLight};;
 border-radius: 8px;
 background-color: transparent;
+`
+export const Count = styled.h3`
+font-size: 22px;
+margin: 0px 10px;
+`
+export const TotalPrice = styled.h4`
+color: ${({theme}) => theme.primary};
+margin-left: 300px;
 `

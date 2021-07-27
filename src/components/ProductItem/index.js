@@ -8,14 +8,18 @@ import {
   Title,
   DescriptionText,
   AddCart,
+  Count,
+  TotalPrice,
 } from "./styles";
 import api from "../../services/api";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useEffect } from "react";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
+import AddIcon from "@material-ui/icons/Add";
+import RemoveIcon from "@material-ui/icons/Remove";
 
-const ProductItem = ({ data }) => {
+const ProductItem = () => {
   const [product, setProduct] = useState("");
   const [ID, setID] = useState(1);
   const [count, setCount] = useState(0);
@@ -49,18 +53,17 @@ const ProductItem = ({ data }) => {
   const subtractItem = () => {
     if (count >= 1) {
       setCount(count - 1);
-      console.log(totalPrice);
     }
   };
+
   const total = price * count;
 
   useEffect(() => {
-    setTotalPrice(price * count);
-  }, [count, price]);
+    setTotalPrice(total);
+  }, [total]);
 
   return (
     <>
-      <h2>Product page</h2>
       <Container>
         <div style={styles}>
           <Carousel>
@@ -92,17 +95,23 @@ const ProductItem = ({ data }) => {
           </Price>
 
           <Quantity>
-            <Button onClick={subtractItem}>-</Button>
-
-            <h3 style={{ margin: "0px 10px" }}>{count}</h3>
-
-            <Button onClick={addItem}>+</Button>
-
-            <h4 style={{ marginLeft: "300px" }}>R${total.toFixed(2)}</h4>
+            <Button onClick={subtractItem}>
+              <RemoveIcon fontSize="small" />
+            </Button>
+            <Count>{count}</Count>
+            <Button onClick={addItem}>
+              <AddIcon fontSize="small" />
+            </Button>
+            <TotalPrice>
+              R${total.toFixed(2)}
+            </TotalPrice>
           </Quantity>
           <AddCart>
-           Add to Cart
-           <AddShoppingCartIcon style={{marginLeft: '5px'}}/>
+            Add to Cart
+            <AddShoppingCartIcon
+              color="secondary"
+              style={{ marginLeft: "5px" }}
+            />
           </AddCart>
         </Description>
       </Container>
