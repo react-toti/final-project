@@ -15,21 +15,37 @@ export const Container = styled.div`
 const useStyles = makeStyles({
   card: {
     margin: '20px',
-    width: '15%',
+    width: '300px',
     minWidth: '260px',
-    height: '15vw',
+    height: '328px',
     minHeight: '260px',
   },
-  par: {
-    width: '90%',
-    height: '30%',
-    fontSize: '10px',
-    marginTop: '-15px',
+  par1: {
+    width: '100%',
+    height: '30px',
+    fontSize: '18px',
+    marginTop: '-20px',
+  },  
+  par2: {
+    width: '100%',
+    height: '30px',
+    fontSize: '16px',
+    marginTop: '-20px',
+    color: '#85bb65',
   },
   table: {
-    marginLeft: '700px',
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr 1fr 1fr'
+    gridTemplateColumns: '1fr 1fr 1fr 1fr',
+    marginLeft: '750px',
+  },
+  btn: {
+    width: '50%',
+  },
+  cont: {
+    padding: '16px 16px 0 16px'
+  },
+  btnCont: {
+    borderTop: '1px solid',
   },
 })
 
