@@ -1,5 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
 import ProductItem from '../../components/ProductItem';
 import api from '../../services/api';
 
@@ -17,15 +16,6 @@ const Product = ({id}) => {
   return (
     <>
          <ProductItem data={getProduct}/>
-=======
-
-
-const Product = () => {
-  return (
-    <>
-        <h1>Product</h1>
-      
->>>>>>> d5d7eae30a851cf04f0054e5e0cf77365b8af5b1
     </>
   );
 };

@@ -33,6 +33,7 @@ export const Description = styled.div`
 width: 600px;
 height: 455px;
 background-color: #f6f7fb;
+/* background-color: #c1a68e; */
 color: #000000;
 /* border: 1px solid; */
 `
@@ -45,18 +46,19 @@ export const Quantity = styled.div`
 display: flex;
 flex-direction: row;
 margin-left: 10%;
+margin-top: 5px;
 `
 export const Price = styled.div`
 display: flex;
 flex-direction: row-reverse;
 margin-right: 10%;
-font-size: 1.5em;
+font-size: 1.2em;
 `
 export const Button = styled.button`
 padding: 8px 13px;
 border-radius: 50%;
 border: none;
-background-color: peachpuff;
+background-color: #ff616f;
 margin-top: -5px;
 `
 export const Title = styled.h2`
@@ -72,10 +74,11 @@ text-align: center;
 export const AddCart = styled.button`
 display: flex;
 flex-direction: row;
+align-items: center;
 margin: 5% auto;
 margin-left: 40%;
 padding: 20px;
-border: none;
-border-radius: 10%;
-background-color:peachpuff;
+border: 5px solid #ff1744;
+border-radius: 8px;
+background-color: transparent;
 `
