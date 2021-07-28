@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Logo = styled.header`
-  background-color: #f08080;
+  background-color: #7fbeeb;
   font-size: 32px;
   color: #fff;
   width: 100%;

@@ -10,7 +10,7 @@ export const Nav = styled.nav`
   padding: 0;
   margin: 0;
   list-style: none;
-  background-color: #1f59;
+  background-color: #5a9bf0;
   
   >li>a {
       color: #fff;
