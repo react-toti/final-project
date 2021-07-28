@@ -10,6 +10,7 @@ import { Grid } from "@material-ui/core";
 import { Container, Album } from './styles';
 import useStyles from './styles';
 import api from '../../services/api'
+import {Link} from 'react-router-dom';
 
 
 
@@ -36,27 +37,32 @@ function MediaCard(props) {
             <Grid item key={cloth.Departament}>
               <Card className={style.card}>
                 <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    alt="Contemplative Reptile"
-                    image={cloth.Imagen}
-                    title="Contemplative Reptile"
-                  />
-                  <CardContent  className={style.cont}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {cloth.title}
-                    </Typography>
-                    <Typography component="p" className={style.par1}>{cloth.name}</Typography>
-                    <div><br /></div>
-                    <Typography component="p" className={style.par2}>R$ {cloth.Price}</Typography>
-                  </CardContent>
+                  <Link to={`/product/${cloth.id}`}>
+                    <CardMedia
+                      component="img"
+                      alt="Contemplative Reptile"
+                      image={cloth.Imagen}
+                      title="Contemplative Reptile"
+                    />
+                    
+                    <CardContent  className={style.cont}>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        {cloth.title}
+                      </Typography>
+                      <Typography component="p" className={style.par1}>{cloth.name}</Typography>
+                      <div><br /></div>
+                      <Typography {...props} component="p" className={style.par2}>R$ {cloth.Price}</Typography>
+                    </CardContent>
+                  </Link>
                 </CardActionArea>
                 <CardActions className={style.btnCont}>
-                  <Button size="small" color="primary" className={style.btn}>
-                    Comprar
-                  </Button>
-                  <Button size="small" color="primary" className={style.btn}>
-                    Carrito
+                  <Link to={`/product/${cloth.id}`} className={style.link}>
+                    <Button  size="small" color="primary" className={style.btnComprar}> 
+                      Comprar
+                    </Button>
+                  </Link>
+                  <Button size="small" color="primary" className={style.btnAddCart}>
+                    Add to Cart
                   </Button>
                 </CardActions>
               </Card>

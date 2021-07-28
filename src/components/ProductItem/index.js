@@ -19,14 +19,15 @@ import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
 
-const ProductItem = () => {
+const ProductItem = ({id}) => {
+  console.log('component product', id)
   const [product, setProduct] = useState("");
   const [ID, setID] = useState(1);
   const [count, setCount] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
 
   const getProduct = async () => {
-    const response = await api.get(`/Product/${ID}`);
+    const response = await api.get(`/Product/${id}`);
     setProduct(response.data);
     setID(ID + 1);
     return response.data;

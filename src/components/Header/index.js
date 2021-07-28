@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import { Barnav, A, Cart, I, NumberSpan, Account } from './styles'
-
+import { Barnav, A, Cart, NumberSpan, Account } from './styles'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 const Header = ({props}) => {
   const [NumberCart] = useState('99');
 
@@ -13,8 +14,8 @@ const Header = ({props}) => {
         <Barnav>
           <A {...props} href='/'>Home</A>
           <A  {...props} href='/'>Fale Conosco</A>
-          <Cart {...props}><I className='fas'>&#xf07a;</I><NumberSpan NumberCart={NumberCart} >{NumberCart}</NumberSpan></Cart>
-          <Account {...props}><I className='fas fa-user-alt'></I></Account>
+          <Cart {...props}><ShoppingCartIcon color="#fff" fontSize="20px"></ShoppingCartIcon><NumberSpan NumberCart={NumberCart} >{NumberCart}</NumberSpan></Cart>
+          <Account {...props}><AccountCircleIcon></AccountCircleIcon></Account>
         </Barnav>
     </>
   );

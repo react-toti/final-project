@@ -1,26 +1,16 @@
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
-
+import { theme } from '../../styles/theme'
 export const Album = styled.div`
-width: 1800px;
-height: 900px
+
 `
 export const Container = styled.div`
-  margin: 20px;
-  padding: 30px;
-  width: 20%;
-  height: 20vw;
+
 `
 
 const useStyles = makeStyles({
-  card: {
-    margin: '20px',
-    width: '300px',
-    minWidth: '260px',
-    height: '328px',
-    minHeight: '260px',
-  },
   par1: {
+    color: theme.primaryDark,
     width: '100%',
     height: '30px',
     fontSize: '18px',
@@ -34,18 +24,47 @@ const useStyles = makeStyles({
     color: '#85bb65',
   },
   table: {
+    width: '80%',
     display: 'grid',
     gridTemplateColumns: '1fr 1fr 1fr 1fr',
-    marginLeft: '750px',
+    gridColumnGap: '20px',
+    gridRowGap: '20px',
+    margin: 'auto'
   },
-  btn: {
+  link: {
     width: '50%',
+  },
+  btnAddCart: {
+
+    width: '50%',
+    display: 'flex',
+    justifyContent: 'center',
+    borderRadius: '5px',
+    '&:hover': {
+      backgroundColor: theme.secondaryDark,
+      color: '#deeaff',
+    },
+    color: theme.default,
+    //textTransform: 'capitalize',
+  },
+  btnComprar: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    borderRadius: '5px',
+    '&:hover': {
+      backgroundColor: theme.secondaryDark,
+      color: '#deeaff',
+    },
+    color: theme.default,
+    //textTransform: 'capitalize',
   },
   cont: {
     padding: '16px 16px 0 16px'
   },
   btnCont: {
     borderTop: '1px solid',
+    
   },
 })
 

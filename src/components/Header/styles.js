@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Barnav = styled.div`
-    display: fixed;
+    display: flex;
     justify-content: flex-end;
     width: 100%;
     height: 60px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #ff1744;
     align-items: center;
     top: 0;
 
@@ -36,7 +36,8 @@ export const Account = styled.button`
 export const A = styled.a`
     margin: 10px 20px;
     text-decoration: none;
-    color: ${({theme})=> theme.default};
+    color: #fff;
+    //color: ${({theme})=> theme.default};
 `
 export const I = styled.i`
     font-size: 20px;
@@ -53,16 +54,18 @@ export const NumberSpan = styled.p`
         }
     }};
     font-size: 14px;
-    color: #FFF;
+    color: ${({theme}) => theme.default};
+    //color: #FFF;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: ${({theme}) => theme.error};
+    background-color: #c1a68e;
+    //background-color: ${({theme}) => theme.error};
     border: white 1px;
     align-items: center;
-    position: fixed;
-    top: 34px;
-    right: 95px;
+    position: absolute;
+    top: 30px;
+    right: 100px;
     content: NumberCart;
 
 `

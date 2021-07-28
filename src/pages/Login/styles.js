@@ -32,7 +32,7 @@ export const Setimg = styled.button`
 `;
 export const ContainerButton = styled.div`
     display: flex;
-    width: 100%;
+    width: 90%;
     margin: 30px auto;
     text-align: -webkit-center;
     justify-content: space-around;

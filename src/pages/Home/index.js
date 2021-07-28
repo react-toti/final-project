@@ -5,8 +5,9 @@ import { MediaCard } from '../../components';
 const Home = () => {
   return (
     <>
-        <h1>Home</h1>
+        <h1>My Shop</h1>
         <MediaCard></MediaCard>
+
     </>
   );
 };
