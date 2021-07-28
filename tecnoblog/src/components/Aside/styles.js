@@ -31,4 +31,3 @@ export const AsideHeader = styled.h2`
   padding: 0.5rem;
   color: #000;
 `;
-
