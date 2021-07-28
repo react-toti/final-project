@@ -1,8 +1,8 @@
-import { Container } from './styles';
+import { Container } from "./styles";
 
-const variant = ['default', 'error', 'deactivated', 'secondary'];
+const variant = ["default", "error", "deactivated", "secondary"];
 
-const sizes = ['medium', 'small'];
+const sizes = ["medium", "small"];
 
 const Button = ({ children, type, onClick, buttonStyle, buttonSize }) => {
   const checkButtonVariant = variant.includes(buttonStyle)
@@ -17,7 +17,7 @@ const Button = ({ children, type, onClick, buttonStyle, buttonSize }) => {
       type={type}
       size={checkButtonSize}
       variant={checkButtonVariant}
-      disabled={checkButtonVariant === 'deactivated'}
+      disabled={checkButtonVariant === "deactivated"}
     >
       {children}
     </Container>

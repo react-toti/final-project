@@ -29,7 +29,7 @@ export default createGlobalStyle`
 
   body, input, button {
     // you can change
-    font-family: 'Andada Pro', serif;;
+    font-family: 'Andada Pro', serif;
   }
 
   a {
