@@ -1,12 +1,12 @@
 import React from 'react';
-import { MediaCard } from '../../components';
+import { Cards } from '../../components';
 
 
 const Home = () => {
   return (
     <>
         <h1>My Shop</h1>
-        <MediaCard></MediaCard>
+        <Cards></Cards>
 
     </>
   );
