@@ -10,5 +10,6 @@ export const theme = {
   textSecondary: "#ffffff",
 
   default: "#4B4F56",
+  defaultLight: "#C8C8C8",
   error: "#FF3333",
 };
