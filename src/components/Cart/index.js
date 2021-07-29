@@ -1,5 +1,4 @@
 import Grid from './Grid';
-import Modal from './Modal';
+import ModalCart from './components/ModalCart';
 
-
-export {Grid, Modal};
+export {Grid, ModalCart};
