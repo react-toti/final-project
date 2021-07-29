@@ -7,17 +7,22 @@ import Routes from './routes';
 import Header from './components/Header';
 import Submenu from './components/Submenu';
 import Footer from './components/Footer';
+import { ContentContainer } from './Pages/Materia/styles';
 
 
 function App() {
   return (
+    <div className="page-container"> 
+      <div className="content-wrap">
       <BrowserRouter>
         <Header />
         <Submenu />
-        <Footer />
         <GlobalStyle />
         <Routes />
       </BrowserRouter>
+      </div>
+      <Footer />
+    </div>
   );
 }
 

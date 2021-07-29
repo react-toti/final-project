@@ -6,6 +6,6 @@ export const Rodape = styled.footer`
   padding: 20px;
   text-align: center;
   width: 100%;
-  position: fixed;
+  position: relative;
   bottom: 0;
 `;
