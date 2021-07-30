@@ -28,7 +28,7 @@ const Grid = (props) => {
 
   return (
     <>
-      <h1>Grid</h1>
+      {/* <h1>Grid</h1> */}
       <ContainerList>
         <List>
           <Items>
