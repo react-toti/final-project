@@ -1,11 +1,11 @@
 import React from 'react';
-import { MediaCard } from '../../components';
+import { Cards } from '../../components';
 import { HomeContainer } from './styles'
 
 const Home = () => {
   return (
     <HomeContainer>
-        <MediaCard></MediaCard>
+        <Cards></Cards>
     </HomeContainer>
   );
 };

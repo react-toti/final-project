@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
-import { theme } from '../../styles/theme'
+import { theme as Tema} from '../../styles/theme'
 export const Album = styled.div`
 
 `
@@ -8,9 +8,9 @@ export const Container = styled.div`
 
 `
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   par1: {
-    color: theme.primaryDark,
+    color: Tema.primaryDark,
     width: '100%',
     height: '30px',
     fontSize: '18px',
@@ -37,15 +37,16 @@ const useStyles = makeStyles({
   },
   btnAddCart: {
 
-    width: '50%',
+    width: '100%',
     display: 'flex',
     justifyContent: 'center',
     borderRadius: '5px',
     '&:hover': {
-      backgroundColor: theme.secondaryDark,
+      backgroundColor: Tema.secondaryDark,
       color: '#deeaff',
     },
-    color: theme.default,
+    color: Tema.default,
+    //textTransform: 'capitalize',
   },
   btnComprar: {
     width: '100%',
@@ -53,18 +54,26 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     borderRadius: '5px',
     '&:hover': {
-      backgroundColor: theme.secondaryDark,
+      backgroundColor: Tema.secondaryDark,
       color: '#deeaff',
     },
-    color: theme.default,
+    color: Tema.default,
+    //textTransform: 'capitalize',
   },
   cont: {
     padding: '16px 16px 0 16px'
   },
   btnCont: {
     borderTop: '1px solid',
-    
   },
-})
+  paper: {
+    position: 'absolute',
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3)
+  },
+}))
 
 export default useStyles
