@@ -1,5 +1,7 @@
 import { makeStyles } from "@material-ui/core";
 // import { theme } from "../../../../styles/theme";
+import styled from 'styled-components';
+import { Form } from 'formik';
 
 const styles = makeStyles({
   modal: {
@@ -16,4 +18,7 @@ const styles = makeStyles({
   },
 });
 
+export const FormContainer = styled(Form)`
+
+`;
 export default styles;
