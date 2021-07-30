@@ -6,20 +6,7 @@ export const Container = styled.button`
   padding: 20px 18px;
   border: none;
   border-radius: 10px;
-  background-color: ${({ theme, variant }) => {
-    switch (variant) {
-      case 'default':
-        return theme.blue;
-      case 'secondary':
-        return theme.pink;
-      case 'deactivated':
-        return theme.lightGrey;
-      case 'error':
-        return theme.error;
-      default:
-        return theme.blue;
-    }
-  }};
+  background-color: #2187FC;
   text-align: center;
   width: 100%;
 

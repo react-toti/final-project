@@ -75,7 +75,7 @@ const CMA = () => (
             placeholder="Imagen 2"
           />
           
-          <Button type="submit" >
+          <Button type="submit" color="blue" >
             Submit
           </Button>
         </form>
