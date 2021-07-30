@@ -29,7 +29,8 @@ const useStyles = makeStyles((theme) => ({
     gridTemplateColumns: '1fr 1fr 1fr 1fr',
     gridColumnGap: '20px',
     gridRowGap: '20px',
-    margin: 'auto'
+    margin: 'auto',
+    paddingBottom: '50px',
   },
   link: {
     width: '50%',

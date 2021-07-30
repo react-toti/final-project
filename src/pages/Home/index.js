@@ -1,14 +1,12 @@
 import React from 'react';
 import { Cards } from '../../components';
-
+import { HomeContainer } from './styles'
 
 const Home = () => {
   return (
-    <>
-        <h1>My Shop</h1>
+    <HomeContainer>
         <Cards></Cards>
-
-    </>
+    </HomeContainer>
   );
 };
 

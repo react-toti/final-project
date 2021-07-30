@@ -18,9 +18,9 @@ import { useEffect } from "react";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
+import {theme} from "../../styles/theme"
 
-const ProductItem = ({id}) => {
-  console.log('component product', id)
+const ProductItem = ({ id }) => {
   const [product, setProduct] = useState("");
   const [ID, setID] = useState(1);
   const [count, setCount] = useState(0);
@@ -37,7 +37,6 @@ const ProductItem = ({id}) => {
 
   useEffect(() => {
     getProduct();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const styles = {
@@ -48,8 +47,7 @@ const ProductItem = ({id}) => {
     if (count >= 0) {
       setCount(count + 1);
     }
-    console.log(totalPrice);
-  };
+  }
 
   const subtractItem = () => {
     if (count >= 1) {
@@ -62,6 +60,20 @@ const ProductItem = ({id}) => {
   useEffect(() => {
     setTotalPrice(total);
   }, [total]);
+
+  const addToCart = async () => {
+    const response = await api.post("/Cart", {
+      ProductId: product.id,
+      name: product.name,
+      Imagen: product.Imagen,
+      Quantity: count,
+      Price: product.Price,
+    });
+
+    if(response.status === 404){
+      alert('Não foi possível adicionar no carrinho')
+    }
+  };
 
   return (
     <>
@@ -103,15 +115,12 @@ const ProductItem = ({id}) => {
             <Button onClick={addItem}>
               <AddIcon fontSize="small" />
             </Button>
-            <TotalPrice>
-              R${total.toFixed(2)}
-            </TotalPrice>
+            <TotalPrice>R${totalPrice.toFixed(2)}</TotalPrice>
           </Quantity>
-          <AddCart>
+          <AddCart onClick={addToCart} >
             Add to Cart
             <AddShoppingCartIcon
-              color="secondary"
-              style={{ marginLeft: "5px" }}
+              style={{ color: theme.primaryLight, marginLeft: "5px" }}
             />
           </AddCart>
         </Description>

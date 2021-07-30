@@ -6,10 +6,8 @@ import api from "../../services/api";
 const Product = () => {
 
   let params = useParams();
-  console.log('page product' , params)
   const getProduct = async () => {
     const response = await api.get("/Product/5");
-    console.log(response);
     return response.data;
   };
 

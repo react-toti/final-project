@@ -9,7 +9,6 @@ import api from '../../services/api';
 
 const SingnUp = props => {
   
-  //getProduct();
   const initialValues = {
     name: '',
     email: '',
@@ -22,7 +21,7 @@ const SingnUp = props => {
       .min(2, 'Muito curto')
       .max(50, 'Muito longo')
       .required('Nome obrigatório')
-      .matches(/^[aA-zZ\s]+$/, "no mames wey, solo letras"),
+      .matches(/^[aA-zZ\s]+$/, "Não pode ingressar numero de caracteres especiais"),
     email: Yup.string().email('E-mail inválido').required('E-mail obrigatório'),
     password: Yup.string()
       .required('Senha obrigatória')
@@ -40,12 +39,9 @@ const SingnUp = props => {
       email: values.email,
       password: values.password,
     });
-    console.log(response);
     if (response.status === 201) {
-      //console.log()
       resetForm({ values: '' });
       window.location.href = window.location.origin+'/home';
-      //props.history.push('/home');
     }
     
   };

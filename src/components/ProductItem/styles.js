@@ -68,7 +68,7 @@ align-items: center;
 margin: 5% auto;
 margin-left: 40%;
 padding: 20px;
-border: 5px solid ${({theme}) => theme.secondaryLight};;
+border: 5px solid ${({theme}) => theme.secondaryLight};
 border-radius: 8px;
 background-color: transparent;
 `
