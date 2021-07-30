@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import api from '../../services/api';
 import { Input, Button } from '../../components';
 
-const SingnIn = (props) => {
+const SingnInAdmin = (props) => {
 
   const initialValues = {
     email: '',
@@ -27,14 +27,13 @@ const SingnIn = (props) => {
     if (response.status === 201) {
       resetForm({ values: '' });
       window.location.href = window.location.origin+'/home';
-      //props.history.push('/home');
     }
     
   };
 
   return (
     <Container>
-        <h1>SingnIn</h1>
+        <h1>SingnIn Admin</h1>
         <Formik
           initialValues={initialValues}
           validationSchema={scheme}
@@ -60,6 +59,6 @@ const SingnIn = (props) => {
   );
 };
 
-export default SingnIn;
+export default SingnInAdmin;
 
 

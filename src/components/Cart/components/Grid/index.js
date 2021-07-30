@@ -10,9 +10,6 @@ import {
   CotainerInfo,
   Button,
   Count,
-  // Checkout,
-  // Total,
-  // Pagar,
   ContainerList,
 } from "./styles";
 import AddIcon from "@material-ui/icons/Add";
@@ -40,15 +37,15 @@ const Grid = (props) => {
               <Title>Handcrafted Fresh Tuna</Title>
               <Price>R$106.00</Price>
               <Quantity>
-                <Button onClick={subtractItem}>
-                  <RemoveIcon fontSize="small" />
+                <Button  onClick={subtractItem}>
+                  <RemoveIcon  fontSize="small" />
                 </Button>
                 <Count>1</Count>
                 <Button onClick={addItem}>
                   <AddIcon fontSize="small" />
                 </Button>
               </Quantity>
-              <Remove>
+              <Remove {...props}>
                 Excluir
                 <RemoveShoppingCartIcon
                   fontSize="14px"

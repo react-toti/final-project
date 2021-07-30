@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {theme} from '../../../../styles/theme'
 
 export const List = styled.div`
     width: 65%;
@@ -39,13 +40,12 @@ export const Quantity = styled.p`
     margin-top: 20px;
 ` 
 export const Remove = styled.button`
-    border: 2px solid ${(theme) => theme.secondaryDark};
+    border: 2px solid ${() => theme.secondary};
     margin: 30px 5px;
     border-radius: 5px;
-    //background-color: ${(theme) => theme.secondaryDark};
-    background-color: #624b37;
+    background-color: ${() => theme.secondary};
     display:flex;
-    color: #ffffff;
+    color: ${() => theme.textSecondary};
     padding: 5px;
     font-size: 18px;
 
@@ -63,7 +63,7 @@ export const Button = styled.button`
     padding: 8px;
     border-radius: 50%;
     border: none;
-    background-color: ${({theme}) => theme.primaryLight};
+    background-color: ${() => theme.primaryLight};
     margin-top: -6px;
 `
 

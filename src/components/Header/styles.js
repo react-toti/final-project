@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../styles/theme";
 
 export const Barnav = styled.div`
     display: flex;
@@ -19,7 +20,7 @@ export const Cart = styled.button`
     background-color: transparent;
     ::first-child {
         font-size: 20px;
-        color: #4B4F56;
+        color: ${() => theme.default};
     }
 `
 export const Account = styled.button`
@@ -30,18 +31,17 @@ export const Account = styled.button`
     background-color: transparent;
     ::first-child {
         font-size: 20px;
-        color: #4B4F56;
+        color: ${() => theme.default};
     }
 `
 export const A = styled.a`
     margin: 10px 20px;
     text-decoration: none;
-    color: #fff;
-    //color: ${({theme})=> theme.default};
+    color: ${()=> theme.default};
 `
 export const I = styled.i`
     font-size: 20px;
-    color: #4B4F56;
+    color: ${() => theme.default};
 `
 export const NumberSpan = styled.p`
 
@@ -54,13 +54,11 @@ export const NumberSpan = styled.p`
         }
     }};
     font-size: 14px;
-    color: ${({theme}) => theme.default};
-    //color: #FFF;
+    color: ${() => theme.default};
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #c1a68e;
-    //background-color: ${({theme}) => theme.error};
+    background-color: ${() => theme.error};
     border: white 1px;
     align-items: center;
     position: absolute;
