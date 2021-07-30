@@ -115,7 +115,7 @@ const ModalCart = () => {
 
   return (
     <div>
-      <Button onClick={() => openCloseModal()}>Abrir modal</Button>
+      <Button style={{width:'100%'}} onClick={() => openCloseModal()}>Abrir modal</Button>
       <Modal open={modal} onClose={openCloseModal}>
         {renderBody}
       </Modal>

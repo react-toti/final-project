@@ -47,7 +47,8 @@ const ProductItem = ({ id }) => {
     if (count >= 0) {
       setCount(count + 1);
     }
-    
+  }
+
   const subtractItem = () => {
     if (count >= 1) {
       setCount(count - 1);
@@ -69,12 +70,9 @@ const ProductItem = ({ id }) => {
       Price: product.Price,
     });
 
-    console.log(product.id)
-    console.log(response)
     if(response.status === 404){
       alert('Não foi possível adicionar no carrinho')
     }
-
   };
 
   return (

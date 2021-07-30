@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {
   List,
   Items,
@@ -16,8 +16,36 @@ import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
 import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
 import PaymentCard from "../PaymentCard";
+import api from "../../../../services/api"
 
 const Grid = (props) => {
+  const [ItemsList, setItemsList] = useState([]);
+  const [PriceTotal, setPriceTotal] = useState(0);
+
+  const calcPriceTotal = (ListItems) => { 
+    let price = 0 
+    for (const ItemList of ListItems) {
+      price = price + (Number(ItemList.Price)*Number(ItemList.Quantity))
+    }
+    setPriceTotal(price); 
+  }
+
+  const getItemsCart = async () => {
+    const response = await api.get(`/Cart`);
+
+    setItemsList([response.data][0]);
+    calcPriceTotal([response.data][0])
+
+    return response.data;
+  };
+
+  
+  //console.log(PriceTotal);
+  
+  useEffect( () => {
+    getItemsCart()
+  }, []);
+
   const addItem = () => {
     console.log("addItem");
   };
@@ -28,118 +56,45 @@ const Grid = (props) => {
 
   return (
     <>
-      {/* <h1>Grid</h1> */}
       <ContainerList>
         <List>
-          <Items>
-            <Img src="https://picsum.photos/536/354" alt="Img" />
-            <CotainerInfo>
-              <Title>Handcrafted Fresh Tuna</Title>
-              <Price>R$106.00</Price>
-              <Quantity>
-                <Button  onClick={subtractItem}>
-                  <RemoveIcon  fontSize="small" />
-                </Button>
-                <Count>1</Count>
-                <Button onClick={addItem}>
-                  <AddIcon fontSize="small" />
-                </Button>
-              </Quantity>
-              <Remove {...props}>
-                Excluir
-                <RemoveShoppingCartIcon
-                  fontSize="14px"
-                  color="textSecondary"
-                  style={{ marginLeft: "5px" }}
-                />
-              </Remove>
-            </CotainerInfo>
-          </Items>
-          <hr></hr>
+        {ItemsList.map((Item, index) => {
+          
+            return (
+              <>
+                <Items>
+                  <Img src={Item.Imagen} alt="Img" />
+                  <CotainerInfo>
+                    <Title>{Item.name}</Title>
+                    <Price>R${Item.Price}</Price>
+                    <Quantity>
+                      <Button  onClick={subtractItem}>
+                        <RemoveIcon  fontSize="small" />
+                      </Button>
+                      <Count>{Item.Quantity}</Count>
+                      <Button onClick={addItem}>
+                        <AddIcon fontSize="small" />
+                      </Button>
+                    </Quantity>
+                    <Remove {...props}>
+                      Excluir
+                      <RemoveShoppingCartIcon
+                        fontSize="14px"
+                        color="textSecondary"
+                        style={{ marginLeft: "5px" }}
+                      />
+                    </Remove>
+                  </CotainerInfo>
+                </Items>
+                <hr></hr>
+              </>
+            )
+          })
+        }
 
-          <Items>
-            <Img src="https://picsum.photos/536/354" alt="Img" />
-            <CotainerInfo>
-              <Title>Handcrafted Fresh Tuna</Title>
-              <Price>R$106.00</Price>
-              <Quantity>
-                <Button onClick={subtractItem}>
-                  <RemoveIcon fontSize="small" />
-                </Button>
-                <Count>1</Count>
-                <Button onClick={addItem}>
-                  <AddIcon fontSize="small" />
-                </Button>
-              </Quantity>
-              <Remove>
-                Excluir
-                <RemoveShoppingCartIcon
-                  fontSize="14px"
-                  color="textSecondary"
-                  style={{ marginLeft: "5px" }}
-                />
-              </Remove>
-            </CotainerInfo>
-          </Items>
-          <hr></hr>
-
-          <Items>
-            <Img src="https://picsum.photos/536/354" alt="Img" />
-            <CotainerInfo>
-              <Title>Handcrafted Fresh Tuna</Title>
-              <Price>R$106.00</Price>
-              <Quantity>
-                <Button onClick={subtractItem}>
-                  <RemoveIcon fontSize="small" />
-                </Button>
-                <Count>1</Count>
-                <Button onClick={addItem}>
-                  <AddIcon fontSize="small" />
-                </Button>
-              </Quantity>
-              <Remove>
-                Excluir
-                <RemoveShoppingCartIcon
-                  fontSize="14px"
-                  color="textSecondary"
-                  style={{ marginLeft: "5px" }}
-                />
-              </Remove>
-            </CotainerInfo>
-          </Items>
-          <hr></hr>
-
-          <Items>
-            <Img src="https://picsum.photos/536/354" alt="Img" />
-            <CotainerInfo>
-              <Title>Handcrafted Fresh Tuna</Title>
-              <Price>R$106.00</Price>
-              <Quantity>
-                <Button onClick={subtractItem}>
-                  <RemoveIcon fontSize="small" />
-                </Button>
-                <Count>1</Count>
-                <Button onClick={addItem}>
-                  <AddIcon fontSize="small" />
-                </Button>
-              </Quantity>
-              <Remove>
-                Excluir
-                <RemoveShoppingCartIcon
-                  fontSize="14px"
-                  color="textSecondary"
-                  style={{ marginLeft: "5px" }}
-                />
-              </Remove>
-            </CotainerInfo>
-          </Items>
-          <hr></hr>
         </List>
-        <PaymentCard />
-        {/* <Checkout>
-            <Total>Total R$1000.00</Total>
-            <ModalCart/>
-          </Checkout> */}
+        <PaymentCard Price={PriceTotal}/>
+        
       </ContainerList>
     </>
   );

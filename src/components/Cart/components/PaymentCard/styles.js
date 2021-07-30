@@ -11,11 +11,16 @@ export const Checkout = styled.div`
     position: absolute;
     top: 0px;
     right: 0px;
+    border-radius: 10px;
 ` 
-
 export const Total = styled.span`
-    
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 `
 export const Pagar = styled.button`
     
+`
+export const P = styled.p`
+    font-weight: 600;
 `

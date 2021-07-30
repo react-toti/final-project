@@ -1,11 +1,11 @@
 import React from "react";
-import { Checkout, Total } from "../Grid/styles";
+import { Checkout, Total, P } from "./styles";
 import ModalCart from "../ModalCart";
 
-const PaymentCard = () => {
+const PaymentCard = ({Price}) => {
   return (
     <Checkout>
-      <Total>Total R$1000.00</Total>
+      <Total><P>Total</P> <P>R${Price}</P></Total>
       <ModalCart />
     </Checkout>
   );

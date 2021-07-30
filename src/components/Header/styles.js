@@ -9,7 +9,17 @@ export const Barnav = styled.div`
     background-color: #ff1744;
     align-items: center;
     top: 0;
+    position: relative;
 
+` 
+export const H1 = styled.h1`
+    color: ${() => theme.textSecondary};
+    font-weight: 600;
+    position: absolute;
+    left: 20px;
+    top: 0px;
+    height: 60px;
+    line-height: 60px;
 ` 
 
 export const Cart = styled.button`
@@ -37,7 +47,7 @@ export const Account = styled.button`
 export const A = styled.a`
     margin: 10px 20px;
     text-decoration: none;
-    color: ${()=> theme.default};
+    color: ${()=> theme.textSecondary};
 `
 export const I = styled.i`
     font-size: 20px;
@@ -58,7 +68,7 @@ export const NumberSpan = styled.p`
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: ${() => theme.error};
+    background-color: ${() => theme.textSecondary};
     border: white 1px;
     align-items: center;
     position: absolute;
