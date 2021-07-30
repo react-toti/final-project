@@ -1,9 +1,13 @@
 import React from 'react';
 import api from '../../services/api';
 import { Formik } from 'formik';
+import {CMAContainer} from "./styles"
+import Input from "../../components/Input2"
+import Button from '../../components/Button';
 
 const CMA = () => (
   <div>
+    <CMAContainer>
     <h1>Crea Tu Noticia</h1>
     <Formik
       initialValues={{ title: '', subTitle: '', article: '', image1: '', image2: '' }}
@@ -33,43 +37,49 @@ const CMA = () => (
         handleSubmit,
       }) => (
         <form onSubmit={handleSubmit}>
-          <input
+          <Input
             type="string"
             name="title"
             onChange={handleChange}
             value={values.title}
+            placeholder="Titulo"
           />
-          <input
+          <Input
           type="string"
           name="subTitle"
           onChange={handleChange}
           value={values.subTitle}
+          placeholder="Subtitulo"
         />
-        <input
+        <Input
         type="string"
         onChange={handleChange}
         name="article"
         value={values.article}
+        placeholder="Noticia"
       />
-      <input
+      <Input
       type="string"
       name="image1"
       onChange={handleChange}
       value={values.image1}
+      placeholder="Imagen 1"
     />
-          <input
+          <Input
             type="string"
             name="image2"
             onChange={handleChange}
             value={values.image2}
+            placeholder="Imagen 2"
           />
           
-          <button type="submit" >
+          <Button type="submit" >
             Submit
-          </button>
+          </Button>
         </form>
       )}
     </Formik>
+    </CMAContainer>
   </div>
 );
 
