@@ -60,3 +60,17 @@ export const ContainerText = styled.div`
       color: #2f2f2f;
   }
 `;
+
+export const Loadding = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #fafafa;
+  text-align: center;
+  p{
+      font-size: 60px;
+      color: #2f2f2f;
+  }
+`;

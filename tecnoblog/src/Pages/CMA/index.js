@@ -11,7 +11,7 @@ const CMA = () => (
     <h1>Crea Tu Noticia</h1>
     <Formik
       initialValues={{ title: '', subTitle: '', article: '', image1: '', image2: '' }}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values, { setSubmitting, resetForm }) => {
         api.post('/articles', {
           title: values.title,
           subTitle: values.subTitle,
@@ -23,6 +23,7 @@ const CMA = () => (
     .then(function (response) {
       if (response.status === 201) {
         setSubmitting(false);
+        resetForm({ values: '' })
         console.log('Success!');
       }
     })
@@ -32,6 +33,7 @@ const CMA = () => (
       }}
     >
       {({
+        resetForm,
         values,
         handleChange,
         handleSubmit,

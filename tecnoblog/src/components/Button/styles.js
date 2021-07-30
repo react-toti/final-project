@@ -7,7 +7,6 @@ export const Container = styled.button`
   border: none;
   border-radius: 10px;
   background-color: ${({ theme, variant }) => {
-    console.log(variant);
     switch (variant) {
       case 'default':
         return theme.blue;

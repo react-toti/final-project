@@ -16,10 +16,10 @@ function Home(){
     return(
         <S.Main>
        <ul> 
-        {!data ? 'Loading...' : 
+        {!data ? <S.Loadding><p>Loadding...</p></S.Loadding> : 
         data.map((data, index) => {
             return(
-                        <S.Container href="#" key={data.id}>
+                        <S.Container href="http://localhost:3000/materia" key={data.id}>
                     <S.ContainerImg>
                     <img src={data.image1} alt="foto de algo"/>
                     </S.ContainerImg>
