@@ -7,7 +7,7 @@ import Routes from './routes';
 import Header from './components/Header';
 import Submenu from './components/Submenu';
 import Footer from './components/Footer';
-import { ContentContainer } from './Pages/Materia/styles';
+
 
 
 function App() {
