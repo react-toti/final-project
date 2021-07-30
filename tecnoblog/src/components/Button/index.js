@@ -7,7 +7,7 @@ const sizes = ["medium", "small"];
 const Button = ({ children, type, onClick, buttonStyle, buttonSize }) => {
   const checkButtonVariant = variant.includes(buttonStyle)
     ? buttonStyle
-    : variant[0];
+    : variant[3];
 
   const checkButtonSize = sizes.includes(buttonSize) ? buttonSize : sizes[0];
 

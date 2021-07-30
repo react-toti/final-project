@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const AsideContainer = styled.div`
   position: sticky;
   top: 0;
-  right: -225px;
-  margin: 200px;
+  margin: 250px 18px;
   height: 800px;
   width: 250px;
   grid-area: aside;

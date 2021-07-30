@@ -16,6 +16,8 @@ export const SubTitle = styled.h2`
 
 export const Content = styled.div`
   grid-area: content;
+  position: relative;
+  left: 320px;
   text-align: justify;
   max-width: 850px;
   align-items: center;
@@ -51,12 +53,8 @@ export const Text = styled.p`
 `;
 
 export const ContentContainer = styled.div`
-    grid-area: content;
-    left: 125px;
-    position: relative;
     display: grid;
     grid-template-areas:
-    "content aside"; 
-    width: 100%;
+    "content . . . . aside"; 
     
 `;
