@@ -45,7 +45,6 @@ const useStyles = makeStyles({
       color: '#deeaff',
     },
     color: theme.default,
-    //textTransform: 'capitalize',
   },
   btnComprar: {
     width: '100%',
@@ -57,7 +56,6 @@ const useStyles = makeStyles({
       color: '#deeaff',
     },
     color: theme.default,
-    //textTransform: 'capitalize',
   },
   cont: {
     padding: '16px 16px 0 16px'

@@ -18,6 +18,7 @@ import { useEffect } from "react";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
+import {theme} from "../../styles/theme"
 
 const ProductItem = ({ id }) => {
   const [product, setProduct] = useState("");
@@ -36,7 +37,6 @@ const ProductItem = ({ id }) => {
 
   useEffect(() => {
     getProduct();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const styles = {
@@ -47,9 +47,7 @@ const ProductItem = ({ id }) => {
     if (count >= 0) {
       setCount(count + 1);
     }
-    // console.log(totalPrice);
-  };
-
+    
   const subtractItem = () => {
     if (count >= 1) {
       setCount(count - 1);
@@ -124,8 +122,7 @@ const ProductItem = ({ id }) => {
           <AddCart onClick={addToCart} >
             Add to Cart
             <AddShoppingCartIcon
-              color="secondary"
-              style={{ marginLeft: "5px" }}
+              style={{ color: theme.primaryLight, marginLeft: "5px" }}
             />
           </AddCart>
         </Description>

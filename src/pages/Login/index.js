@@ -13,16 +13,13 @@ const Login = (...props) => {
 
   const entrar = () => {
     setImg("0%");
-    //setNumberCart('1')
     setcolorBtnEntrar("error")
     setcolorBtnCadastro("default")
-    //console.log(imgPosition);
   };
   const criarConta = () => {
     setImg("50%");
     setcolorBtnEntrar("default")
     setcolorBtnCadastro("error")
-    //console.log(imgPosition);
   };
 
   

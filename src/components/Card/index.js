@@ -19,12 +19,8 @@ function MediaCard(props) {
   const style = useStyles()
 
   const getProduct = async () => {
-    console.log("getproduct");
     const response = await api.get('/Product');
-    console.log(response);
-
     setProd(response.data);
-    // return response.data;
   }
 
   useEffect(()=>getProduct())
